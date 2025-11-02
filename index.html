@@ -336,21 +336,17 @@
     .swiper-slide {
       border-radius: 10px;
       padding: 20px;
-
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
-
-
     }
 
     .product-img img {
-      max-width: 300px;
+      width: 100%;
       height: 300px;
       border-radius: 10px;
       object-fit: cover;
-
     }
 
     .product-category {
@@ -420,6 +416,40 @@
       font-size: 30px;
       cursor: pointer;
       transition: color 0.3s ease;
+    }
+       .unavailable-product {
+      display: none; /* hidden by default */
+      max-width: 520px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fafafa;
+      color: #1E1E1E;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .unavailable-product h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .unavailable-product p {
+      color: #666;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .unavailable-product .view-other-products {
+      color: #E58411;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* helper to show the element via JS by adding the "show" class */
+    .unavailable-product.show {
+      display: block;
     }
 
     .swiper-button-prev>svg,
@@ -659,6 +689,22 @@
   
 }
 
+/*important*/
+
+.hidden {
+  display: none !important;
+}
+
+
+.unavailable-product {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+.unavailable-product.show {
+  display: block;
+}
 
 
     @media (max-width: 768px) {
@@ -848,10 +894,10 @@
     <div class="head">
       <h2>Best Selling Product</h2>
       <div class="menu">
-        <a href="#" class="active">Chair</a>
-        <a href="#">Table</a>
-        <a href="#">Sofa</a>
-        <a href="#">Light</a>
+        <a href="#" class="btn active" data-filter="chair">Chair</a>
+        <a href="#" class="btn" data-filter="table">Table</a>
+        <a href="#" class="btn" data-filter="sofa">Sofa</a>
+        <a href="#" class="btn" data-filter="light">Light</a>
       </div>
     </div>
     <div class="productSlide swiper">
@@ -968,11 +1014,173 @@
             </div>
           </div>
         </div>
+        <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/table1.jpg" alt="table1">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Table</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$400.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/table2.jpg" alt="table1">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Table</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$300.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/table3.jpg" alt="table1">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Table</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$350.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/table4.jpg" alt="table1">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Table</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$400.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/table4.jpg" alt="table1">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Table</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$350.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/sofa1.webp" alt="sofa">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Sofa</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$250.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+             <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/sofa1.webp" alt="sofa">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Sofa</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$250.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+             <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/sofa2.jpg" alt="sofa">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Sofa</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$250.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+             <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/sofa3.jpg" alt="sofa">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Sofa</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$250.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+             <div class="swiper-slide">
+          <div class="product">
+            <div class="product-img">
+              <img src="./asset/image/sofa4.jpg" alt="sofa">
+            </div>
+            <div class="product-description">
+              <p class="product-category">Sofa</p>
+              <h3 class="product-name">Sakarias Armchair</h3>
+              <div class="rating"><img src="./asset/image/rating.png" alt="Rating"></div>
+              <div class="endProduct">
+                <p class="product-price">$250.00</p>
+                <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fa fa-plus-circle"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
 
       </div>
       
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
+ 
 
       <a href="#" class="viewAllBtn">View ALL <i class="fa fa-long-arrow-right"></i></a>
     </div>
@@ -1122,7 +1330,7 @@
     const navMenu = document.querySelector('nav ul');
     menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-    new Swiper('.productSlide', {
+    const productSwiper = new Swiper('.productSlide', {
       loop: true,
       slidesPerView: 4,
       spaceBetween: 40,
@@ -1134,7 +1342,8 @@
         1024: { slidesPerView: 4 }
       }
     });
-    new Swiper('.testimonialCard', {
+    
+    const testimonialSwiper = new Swiper('.testimonialCard', {
       loop: true,
       slidesPerView: 3,
       spaceBetween: 40,
@@ -1146,6 +1355,71 @@
         1024: { slidesPerView: 3 }
       }
     });
+
+/* Product Filter */
+const filterButtons = document.querySelectorAll('.menu .btn');
+const swiperWrapper = document.querySelector('.productSlide .swiper-wrapper');
+const swiper = productSwiper;
+
+const nextBtn = document.querySelector('.productSlide .swiper-button-next');
+const prevBtn = document.querySelector('.productSlide .swiper-button-prev');
+const viewAllBtn = document.querySelector('.productSlide .viewAllBtn');
+
+let unavailableEl = document.querySelector('.unavailable-product');
+if (!unavailableEl) {
+  unavailableEl = document.createElement('div');
+  unavailableEl.className = 'unavailable-product';
+  unavailableEl.innerHTML = `
+    <h3>No Products Found</h3>
+    <p>Sorry, we couldn't find products for the selected category.</p>
+    <a href="#" class="view-other-products">View other products</a>
+  `;
+  document.querySelector('.productSlide').insertAdjacentElement('afterend', unavailableEl);
+}
+
+const unavailableLink = unavailableEl.querySelector('.view-other-products');
+
+function toggleNav(show) {
+  [nextBtn, prevBtn, viewAllBtn].forEach(btn => btn && (btn.style.display = show ? '' : 'none'));
+}
+
+function filterProducts(filter) {
+  const slides = Array.from(swiperWrapper.querySelectorAll('.swiper-slide'));
+  let visible = 0;
+  slides.forEach(slide => {
+    const category = slide.querySelector('.product-category')?.textContent.toLowerCase().trim() || '';
+    const match = filter === 'all' || filter === category;
+    slide.style.display = match ? 'flex' : 'none';
+    if (match) visible++;
+  });
+  unavailableEl.classList.toggle('show', visible === 0);
+  toggleNav(visible > 0);
+  swiper.update();
+}
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterProducts(btn.getAttribute('data-filter'));
+  });
+});
+
+if (unavailableLink) {
+  unavailableLink.addEventListener('click', e => {
+    e.preventDefault();
+    filterButtons.forEach(b => b.classList.remove('active'));
+    const allBtn = Array.from(filterButtons).find(b => b.getAttribute('data-filter') === 'all') || filterButtons[0];
+    if (allBtn) allBtn.classList.add('active');
+    filterProducts('all');
+  });
+}
+
+filterProducts('all');
+
+  
+
   </script>
 </body>
 
